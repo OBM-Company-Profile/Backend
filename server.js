@@ -12,6 +12,10 @@ const companyValueRoutes = require("./routes/companyValue");
 const operationAreaRoutes = require("./routes/operationArea");
 const contactPersonRoutes = require("./routes/contactPerson");
 const proyekRoutes = require("./routes/proyek");
+const mobilRoutes = require("./routes/fasilitasMobil");
+const kapalRoutes = require("./routes/fasilitasKapal");
+const kantorRoutes = require("./routes/fasilitasKantor");
+const milestoneRoutes = require("./routes/milestone");
 
 // Use the routes with specific base paths
 app.use("/api/images", imageRoutes); // Routes for images
@@ -21,6 +25,10 @@ app.use("/api/company_value", companyValueRoutes); // Routes for company values
 app.use("/api/operation_area", operationAreaRoutes); // Routes for operation area
 app.use("/api/contact_person", contactPersonRoutes); // Routes for contact person
 app.use("/api/proyek", proyekRoutes);
+app.use("/api/mobil_list", mobilRoutes);
+app.use("/api/kapal_list", kapalRoutes);
+app.use("/api/kantor_list", kantorRoutes);
+app.use("/api/milestone", milestoneRoutes);
 
 // Start the server
 app.listen(port, () => {

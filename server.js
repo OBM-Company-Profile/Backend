@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 3307; // Your server port
+const port = process.env.PORT || 3307; // Use assigned port or fallback to 3307 for local dev
 
 const cors = require("cors");
 app.use(cors());
 
 // Import the routes
+const connectRoute = require("./routes/testConnection");
 const imageRoutes = require("./routes/images");
 const managementPolicyRoutes = require("./routes/managementPolicy");
 const companyValueRoutes = require("./routes/companyValue");
@@ -18,6 +19,7 @@ const kantorRoutes = require("./routes/fasilitasKantor");
 const milestoneRoutes = require("./routes/milestone");
 
 // Use the routes with specific base paths
+app.use("/", connectRoute);
 app.use("/api/images", imageRoutes); // Routes for images
 app.use("/api/image_carousel", imageRoutes);
 app.use("/api/management_policy", managementPolicyRoutes); // Routes for management policies

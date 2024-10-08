@@ -1,13 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../db/connection");
 
-// Route to fetch company values
+// Test route to check server functionality
 router.get("/", (req, res) => {
-  res.status(200).json({
-    message: "API v1 ready to use",
-    status: "Success",
-  });
+  res.send("API is running!");
 });
 
 module.exports = router;

@@ -1,12 +1,21 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3307; // Use .env or fallback to 3307 for local dev
+const port = process.env.PORT || 3306; // Use .env or fallback to 3306 for local dev
 const cors = require("cors");
 
 require("dotenv").config(); // Load environment variables
 
-// Enable CORS
-app.use(cors());
+// CORS options
+const corsOptions = {
+  origin: "https://orelabahari.co.id", // Only allow this origin
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  credentials: true, // Allow credentials if needed
+  optionsSuccessStatus: 204, // For legacy browser support
+};
+
+// Enable CORS with the specified options
+app.use(cors(corsOptions));
 
 // Import the MySQL database connection
 const db = require("./db/connection"); // Assuming 'connection.js' is in the same folder

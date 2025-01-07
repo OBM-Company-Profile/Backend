@@ -1,3 +1,5 @@
+#Backend (Database + API Endpoint)
+
 - Open VSCode and open New Terminal
 - Type/paste "git clone https://github.com/OBM-Company-Profile/Backend" **(without "")** then enter
 - To run the nodemon, input "npm run api-service" **(without "")** then enter
